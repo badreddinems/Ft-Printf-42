@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamsyah <bamsyah@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: bamsyah <bamsyah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:26:36 by bamsyah           #+#    #+#             */
-/*   Updated: 2023/03/15 17:28:03 by bamsyah          ###   ########.fr       */
+/*   Updated: 2023/03/16 14:04:49 by bamsyah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	ft_printstr(char c, va_list args, int *len)
 	else if (c == 'u')
 		ft_putunbr_len(va_arg(args, unsigned int), len);
 	else if (c == 'x')
-		ft_puthexa(va_arg(args, unsigned int), "0123456789abcdef", len);
+		ft_putbase(va_arg(args, unsigned int), "0123456789abcdef", len);
 	else if (c == 'X')
-		ft_puthexa(va_arg(args, unsigned int), "0123456789ABCDEF", len);
+		ft_putbase(va_arg(args, unsigned int), "0123456789ABCDEF", len);
 	else if (c == 'p')
 	{
 		*len += ft_putstr_len("0x");
@@ -37,13 +37,13 @@ void	ft_printstr(char c, va_list args, int *len)
 
 int	ft_printf(const char *str, ...)
 {
-	va_list	pt;
+	va_list	args;
 	int	i;
 	int	len;
 
 	i = 0;
 	len = 0;
-	va_start(pt, str);
+	va_start(args, str);
 	while (str[i++])
 	{
 		if (str[i] == '%')
