@@ -6,7 +6,7 @@
 #    By: bamsyah <bamsyah@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/15 17:30:24 by bamsyah           #+#    #+#              #
-#    Updated: 2023/03/16 15:57:28 by bamsyah          ###   ########.fr        #
+#    Updated: 2023/03/17 14:21:24 by bamsyah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,12 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC =
+SRC = ft_printf.c \
+		ft_putbase.c \
+		ft_putchar_len.c \
+		ft_putnbr_len.c \
+		ft_putstr_len.c \
+		ft_putunbr.c
 
 OBJ = $(SRC:.c=.o)
 
