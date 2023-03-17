@@ -6,7 +6,7 @@
 /*   By: bamsyah <bamsyah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:26:36 by bamsyah           #+#    #+#             */
-/*   Updated: 2023/03/17 15:47:05 by bamsyah          ###   ########.fr       */
+/*   Updated: 2023/03/17 15:59:19 by bamsyah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ int	ft_printf(const char *str, ...)
 	return (len);
 }
 
-int main ()
-{
-	char *s = "yassine";
-	int i = 5;
-	int j = ft_printf(" %d ss %m  %%  s ", i);
-	//printf("%d", j);
-}
+// int main ()
+// {
+// 	// char *s = "yassine";
+// 	// char *j = "marouane";
+// 	ft_printf("%s", (char *)NULL);
+// 	//printf("%d", j);
+// }
