@@ -6,7 +6,7 @@
 /*   By: bamsyah <bamsyah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:26:36 by bamsyah           #+#    #+#             */
-/*   Updated: 2023/03/17 15:03:28 by bamsyah          ###   ########.fr       */
+/*   Updated: 2023/03/17 15:47:05 by bamsyah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	ft_printstr(char c, va_list args, int *len)
 		*len += ft_putstr_len("0x");
 		ft_putbase(va_arg(args, unsigned long), "0123456789abcdef", len);
 	}
+	else
+		*len +=  ft_putchar_len(c);
 }
 
 int	ft_printf(const char *str, ...)
@@ -44,7 +46,7 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	len = 0;
 	va_start(args, str);
-	while (str[i++])
+	while (str[i])
 	{
 		if (str[i] == '%')
 		{
@@ -55,7 +57,16 @@ int	ft_printf(const char *str, ...)
 		{
 			len += ft_putchar_len(str[i]);
 		}
+		i++;
 	}
 	va_end(args);
 	return (len);
+}
+
+int main ()
+{
+	char *s = "yassine";
+	int i = 5;
+	int j = ft_printf(" %d ss %m  %%  s ", i);
+	//printf("%d", j);
 }
