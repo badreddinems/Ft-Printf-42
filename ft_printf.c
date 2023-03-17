@@ -6,7 +6,7 @@
 /*   By: bamsyah <bamsyah@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:26:36 by bamsyah           #+#    #+#             */
-/*   Updated: 2023/03/16 14:04:49 by bamsyah          ###   ########.fr       */
+/*   Updated: 2023/03/17 15:03:28 by bamsyah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_printstr(char c, va_list args, int *len)
 	else if (c == 'p')
 	{
 		*len += ft_putstr_len("0x");
-		ft_putadress(va_arg(args, unsigned long long), len);
+		ft_putbase(va_arg(args, unsigned long), "0123456789abcdef", len);
 	}
 }
 
@@ -47,10 +47,14 @@ int	ft_printf(const char *str, ...)
 	while (str[i++])
 	{
 		if (str[i] == '%')
+		{
 			i++;
-			ft_printstr(s[i], args, &len);
+			ft_printstr(str[i], args, &len);
+		}
 		else
+		{
 			len += ft_putchar_len(str[i]);
+		}
 	}
 	va_end(args);
 	return (len);
