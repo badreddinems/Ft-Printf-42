@@ -51,7 +51,10 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			ft_printstr(str[i], args, &len);
+			if (!str[i])
+				break ;
+			else
+				ft_printstr(str[i], args, &len);
 		}
 		else
 		{
