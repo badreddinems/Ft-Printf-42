@@ -6,7 +6,7 @@
 /*   By: bamsyah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:26:36 by bamsyah           #+#    #+#             */
-/*   Updated: 2024/05/20 02:24:57 by bamsyah          ###   ########.fr       */
+/*   Updated: 2024/05/20 02:27:56 by bamsyah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (len);
-}
-int main()
-{
-	ft_printf("test\n");
 }
