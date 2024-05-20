@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_len.c                                   :+:      :+:    :+:   */
+/*   ft_putstr_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamsyah <bamsyah@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bamsyah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 14:26:57 by bamsyah           #+#    #+#             */
-/*   Updated: 2023/03/17 15:40:34 by bamsyah          ###   ########.fr       */
+/*   Created: 2023/03/14 14:27:02 by bamsyah           #+#    #+#             */
+/*   Updated: 2024/05/20 02:24:26 by bamsyah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int	ft_putchar_len(char c)
+int	ft_putstr_len(char *str)
 {
-	write(1, &c, 1);
-	return (1);
+	int	i;
+
+	i = 0;
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
 }

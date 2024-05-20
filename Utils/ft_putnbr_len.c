@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamsyah <bamsyah@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bamsyah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:48:12 by bamsyah           #+#    #+#             */
-/*   Updated: 2023/03/17 18:00:48 by bamsyah          ###   ########.fr       */
+/*   Updated: 2024/05/20 02:24:22 by bamsyah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 void	ft_putnbr_len(int nbr, int *len)
 {

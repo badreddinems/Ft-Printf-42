@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_len.c                                    :+:      :+:    :+:   */
+/*   ft_putunbr_len.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamsyah <bamsyah@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bamsyah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 14:27:02 by bamsyah           #+#    #+#             */
-/*   Updated: 2023/03/17 15:58:47 by bamsyah          ###   ########.fr       */
+/*   Created: 2023/03/16 13:46:18 by bamsyah           #+#    #+#             */
+/*   Updated: 2024/05/20 02:24:30 by bamsyah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int	ft_putstr_len(char *str)
+void	ft_putunbr_len(unsigned int nbr, int *len)
 {
-	int	i;
-
-	i = 0;
-	if (!str)
+	if (nbr >= 0 && nbr <= 9)
+		*len += ft_putchar_len(nbr + 48);
+	else
 	{
-		write(1, "(null)", 6);
-		return (6);
+		ft_putnbr_len(nbr / 10, len);
+		ft_putnbr_len(nbr % 10, len);
 	}
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	return (i);
 }

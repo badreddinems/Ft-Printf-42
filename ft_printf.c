@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bamsyah <bamsyah@student.42.fr>            +#+  +:+       +#+        */
+/*   By: bamsyah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:26:36 by bamsyah           #+#    #+#             */
-/*   Updated: 2023/03/22 18:13:11 by bamsyah          ###   ########.fr       */
+/*   Updated: 2024/05/20 02:24:57 by bamsyah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,8 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (len);
+}
+int main()
+{
+	ft_printf("test\n");
 }
